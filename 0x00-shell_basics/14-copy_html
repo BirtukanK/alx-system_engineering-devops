@@ -1,2 +1,3 @@
 #!/bin/bash
 cp /tmp/file_0.html ../alx-system_engineering-devops
+cp /tmp/file_0.html ../alx-system_engineering-devops
