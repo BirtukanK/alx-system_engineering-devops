@@ -1,2 +1,1 @@
-#!/bin/bash
-My shell folder readme
+Shell permission readme
