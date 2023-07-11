@@ -1,2 +1,2 @@
 #!/bin/bash
-sed cC
+tr -d cC
