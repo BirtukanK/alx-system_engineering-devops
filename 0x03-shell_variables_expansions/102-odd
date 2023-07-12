@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n | grep
+ls -l | awk 'NR % 2 == 1'
