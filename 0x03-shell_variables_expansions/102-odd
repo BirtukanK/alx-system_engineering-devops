@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n | grep
+echo '%2 == 1'
