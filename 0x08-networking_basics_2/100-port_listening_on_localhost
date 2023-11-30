@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This bash script displays port listening on localhost
+nc -lk localhost 98
