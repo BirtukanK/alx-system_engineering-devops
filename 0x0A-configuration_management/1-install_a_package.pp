@@ -11,3 +11,9 @@ exec { 'update_pip3':
   path    => '/usr/bin',
   unless  => 'pip3 show pip | grep -q "Version: 21."',
 }
+
+package { 'werkzeug':
+  ensure   => '2.1.1',
+  provider => 'pip3',
+  require  => Exec['update_pip3'],
+}
