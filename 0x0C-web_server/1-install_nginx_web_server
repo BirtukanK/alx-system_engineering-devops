@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# bash script to installs Nginx
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo echo "Hello World!" > /var/www/html/index.html
+sudo sed -i 's/80 default_server/80/' /etc/nginx/sites-available/default
+sudo service nginx start
