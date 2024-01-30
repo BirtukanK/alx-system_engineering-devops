@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2154
-# this script is to configure new webserver to run Nginx and set up so that its HTTP response contains a custom header
-apt-get update
-apt-get install -y nginx
-service nginx start
-sed -i "20i\        add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
-service nginx restart
+# configure webserver files
+sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+# test syntax errors
+sudo nginx -t
+
+# restart config files after change
+sudo service nginx restart
