@@ -14,7 +14,7 @@ server_config=\
 frontend  birtukan_frontend
         bind *:80
         mode http
-        default_backend besthor_backend
+        default_backend birtukan_backend
 backend birtukan_backend
         balance roundrobin
         server 14633-web-01 18.234.80.85:80 check
