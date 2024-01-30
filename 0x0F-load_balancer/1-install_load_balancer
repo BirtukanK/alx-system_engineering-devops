@@ -1,20 +1,50 @@
 #!/usr/bin/env bash
-# Install HAproxy
+# Install HAproxy loadbalancer
+# HAproxy installation
 # gell all necessary packages
 apt-get install --no-install-recommends software-properties-common
 add-apt-repository ppa:vbernat/haproxy-2.0
-
+sudo apt-get -y update
 # install haproxy version 2.0
 apt-get install haproxy=2.0.\*
 
 # edit config file
 server_config=\
 "
-frontend  besthor_frontend
+frontend  birtukan_frontend
         bind *:80
         mode http
         default_backend besthor_backend
-backend besthor_backend
+backend birtukan_backend
+        balance roundrobin
+        server 14633-web-01 18.234.80.85:80 check
+        server 14633-web-02 52.87.216.243:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Testing the HAproxy configuration file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+
+# Restart the Nginx service
+sudo service haproxy restart# HAproxy installation
+# gell all necessary packages
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.0
+sudo apt-get -y update
+# install haproxy version 2.0
+apt-get install haproxy=2.0.\*
+
+# edit config file
+server_config=\
+"
+frontend  birtukan_frontend
+        bind *:80
+        mode http
+        default_backend besthor_backend
+backend birtukan_backend
         balance roundrobin
         server 14633-web-01 18.234.80.85:80 check
         server 14633-web-02 52.87.216.243:80 check
