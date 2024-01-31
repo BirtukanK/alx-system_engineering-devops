@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this shell script is to configure a server like Task 0 but in 5 lines or less
+sudo sed -i 's/80 default_server/80/' /etc/nginx/sites-available/default
+service stop nginx
