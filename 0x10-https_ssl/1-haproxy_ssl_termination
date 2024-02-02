@@ -47,7 +47,7 @@ frontend  birtukan_frontend
         default_backend birtukan_backend
 
 frontend www-https-frontend
-	bind *:443 ssl crt /etc/haproxy/certs/birtukan.pem
+	bind *:443 ssl crt /etc/haproxy/certs/birtukan.online.pem
 	reqadd X-Forwarded-Proto:\ https
 	default_backend www-backend
 
