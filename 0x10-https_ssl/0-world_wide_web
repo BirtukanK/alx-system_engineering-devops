@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2086
 # Bash script that displays information about subdomains
+# shellcheck disable=SC2086
+
 
 allsubdomains=("www" "lb-01" "web-01" "web-02")
 prettifydig () {
