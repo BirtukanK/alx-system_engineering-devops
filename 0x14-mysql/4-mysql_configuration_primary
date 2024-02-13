@@ -7,3 +7,4 @@ log-error       = /var/log/mysql/error.log
 #bind-address   = 127.0.0.1
 # Disabling symbolic-links is recommended to prevent as>
 symbolic-links=0
+binlog_do_db    = tyrell_corp
