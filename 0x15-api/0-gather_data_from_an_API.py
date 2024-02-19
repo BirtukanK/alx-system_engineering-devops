@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Defines a python script to acess REST API
 """
-import requests
 import sys
+import requests
 """ all necessary modules imported"""
 
 if __name__ == "__main__":
