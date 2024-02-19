@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-""" Defines a python script to acess REST API"""
+""" Defines a python script to acess REST API
+"""
 import requests
 import sys
+""" all necessary modules imported"""
 
 url = "https://jsonplaceholder.typicode.com"
 employee_id = int(sys.argv[1])
