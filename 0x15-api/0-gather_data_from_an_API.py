@@ -20,6 +20,6 @@ if __name__ == "__main__":
     done = len(completed_tasks)
     total = len(todos_data)
 
-    print(f"Employee {employee_name} is done with tasks ({done}/{total}): ")
+    print(f"Employee {employee_name} is done with tasks({done}/{total}):")
     for task in completed_tasks:
         print(f"     {task['title']}")
