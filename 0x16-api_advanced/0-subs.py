@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """defines method of subscribers"""
+import requests
 
 
 def number_of_subscribers(subreddit):
     """ Queryis api an return number of subscribers"""
-    import requests
 
     info = requests.get("https://www.reddit.com/r/{}/about.json"
                         .format(subreddit),
